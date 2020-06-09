@@ -1,0 +1,13 @@
+networks:
+  default:
+    external:
+      name: nat
+services:
+  consomi.web:
+    build:
+      context: C:\Users\fifou\Desktop\.net\Consomi\Consomi.Web
+      dockerfile: Dockerfile
+    image: consomiweb
+    ports:
+    - target: 80
+version: '3.4'

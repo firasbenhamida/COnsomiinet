@@ -1,0 +1,22 @@
+﻿<!-- NOTE: This file is automatically included by NuGet for single-target builds. -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Target Name="BuildWithSmartAssembly" AfterTargets="CoreBuild">
+    <PropertyGroup>
+      <SmartAssemblyProjectFile Condition="'$(SmartAssemblyProjectFile)' == ''">$(MSBuildProjectDirectory)\$(AssemblyName).saproj</SmartAssemblyProjectFile>
+      <SmartAssemblyIsEnabled Condition="'$(SmartAssemblyIsEnabled)' == '' AND '$(Configuration)' == 'Release' AND Exists('$(SmartAssemblyProjectFile)')">True</SmartAssemblyIsEnabled>
+      <SmartAssemblyOverwriteAssembly Condition="'$(SmartAssemblyOverwriteAssembly)' == ''"></SmartAssemblyOverwriteAssembly>
+      <SmartAssemblyInput Condition="'$(SmartAssemblyInput)' == ''"></SmartAssemblyInput>
+      <SmartAssemblyOutput Condition="'$(SmartAssemblyOutput)' == ''"></SmartAssemblyOutput>
+    </PropertyGroup>
+
+    <Warning
+      Condition="'$(SmartAssemblyIsEnabled)' == '' AND '$(Configuration)' == 'Release' AND !Exists('$(SmartAssemblyProjectFile)')"
+      Text="SmartAssembly will not run, because project `$(SmartAssemblyProjectFile)` was not found. You can force execution by setting &lt;SmartAssemblyIsEnabled&gt; to True."/>
+    <SmartAssembly
+      Condition="'$(SmartAssemblyIsEnabled)' == 'True'"
+      ProjectFile="$(SmartAssemblyProjectFile)"
+      OverwriteAssembly="$(SmartAssemblyOverwriteAssembly)"
+      Input="$(SmartAssemblyInput)"
+      Output="$(SmartAssemblyOutput)" />
+  </Target>
+</Project>

@@ -1,0 +1,121 @@
+﻿@model IEnumerable<Consomi.Domain.Entities.CartLine>
+
+@{
+    ViewBag.Title = "My Cart";
+
+}
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+
+    #add-marge-product {
+        margin-bottom: 25px;
+    }
+</style>
+<!-- breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">My Cart</li>
+        </ol>
+    </div>
+</div>
+
+<!-- //breadcrumbs -->
+<!-- top-brands -->
+<div class="top-brands">
+    <div class="container">
+        <h2>My Cart</h2>
+        <div class="grid_3 grid_5">
+           
+
+    
+                        @if (Model == null)
+            {
+                            <h1>Your cart is currently empty</h1>
+                        }
+                        else
+                        {
+
+                            <div class="agile-tp">
+
+                                <p class="w3l-ad"></p>
+                            </div>
+                            <div class="agile_top_brands_grids">
+                                @foreach (var item in Model)
+                {
+                                    <div id="add-marge-product" class="col-md-4 top_brand_left">
+                                        <div class="hover14 column">
+                                            <div class="agile_top_brand_left_grid">
+                                                <div class="agile_top_brand_left_grid_pos">
+                                                    <img src="images/offer.png" alt=" " class="img-responsive" />
+                                                </div>
+                                                <div class="agile_top_brand_left_grid1">
+
+                                                    <div class="snipcart-item block">
+                                                        <div class="snipcart-thumb">
+                                                            <div class="ban-top">
+
+                                                                @{
+                                                                    var base64 = Convert.ToBase64String(item.myProduct.imageByte);
+                                                                    var imgsrc = string.Format("data:image/gif;base64,{0}", base64);
+
+                                                                }
+
+                                                                <img class="center" src="@imgsrc" widht="274" height="320" />
+                                                            </div>
+                                                            <p>@Html.DisplayFor(modelItem => item.myProduct.nom)</p>
+                                                            <p> quantity choosed : <b>@Html.DisplayFor(modelItem => item.quantiteChoisie) </b></p>
+                                                            <p> product price : <b>@Html.DisplayFor(modelItem => item.prixDuProduit) </b>  </p>
+                                                            <p> total price  :  <b>@Html.DisplayFor(modelItem => item.prixTotal)</b></p>
+
+                                                        </div>
+                                                        <div class="snipcart-details top_brand_home_details">
+                                                            <figure>
+                                                                <a href='@Url.Action("EditCartLine", "Product",new { id = item.id })'>   <input type="submit" value="Edit Quantity" class="button" /></a>
+
+                                                            </figure>
+                                                        </div>
+                                                        <div class="snipcart-details top_brand_home_details">
+                                                            <figure>
+                                                                <a href='@Url.Action("DeleteCartLine", "Product",new { id = item.id })'>   <input type="submit" value="Remove from cart" class="button" /></a>
+
+                                                            </figure>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                                                    }
+
+
+                                <div class="clearfix"> </div>
+
+
+                            </div>
+
+
+                                                                    }
+                    </div>
+                    <div class="snipcart-details top_brand_home_details">
+                        @if (Model != null)
+                        {
+                            @*<a href='@Url.Action("PaymentWithPaypal", "Product")' title="" class="form-btn2"> <input type="submit" value="Confirm Purchase" class="button" /></a>*@
+                            <a href='@Url.Action("ConfirmPurchase", "Product")' title="" class="form-btn2"> <input type="submit" value="Confirm Purchase" class="button" /></a>
+                        }
+                    </div>
+
+                </div>
+
+            </div>
+
+
+<br />

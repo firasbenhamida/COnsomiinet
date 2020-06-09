@@ -1,0 +1,10 @@
+﻿<!-- NOTE: This file is automatically included by NuGet for single-target builds. -->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" TreatAsLocalProperty="_SATaskTFM;_SATaskAssembly">
+  <PropertyGroup>
+    <_SATaskTFM Condition="'$(MSBuildRuntimeType)' == 'Core'">netstandard2.0</_SATaskTFM>
+    <_SATaskTFM Condition="'$(MSBuildRuntimeType)' != 'Core'">net472</_SATaskTFM>
+    <_SATaskAssembly>$(MSBuildThisFileDirectory)..\tools\$(_SATaskTFM)\SmartAssembly.MSBuild.Tasks.dll</_SATaskAssembly>
+  </PropertyGroup>
+
+  <UsingTask TaskName="SmartAssembly.MSBuild.Tasks.SmartAssembly" AssemblyFile="$(_SATaskAssembly)" />
+</Project>

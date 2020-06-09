@@ -1,0 +1,16 @@
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.exe.config
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.exe
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.pdb
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.Data.dll
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.Domain.dll
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.Service.dll
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\EntityFramework.dll
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.Data.pdb
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.Domain.pdb
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\Consomi.Service.pdb
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\EntityFramework.xml
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\obj\Release\Consomi.Console.csprojResolveAssemblyReference.cache
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\obj\Release\Consomi.exe
+C:\Users\Queen-Asus\Desktop\Consomi\Consomi\obj\Release\Consomi.pdb
